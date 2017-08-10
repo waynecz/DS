@@ -1,0 +1,26 @@
+{{include '../control/meta'}}
+<body>
+{{include '../control/header'}}
+{{#ctx}}
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/bundle.js?t=1502389637303"></script>
+<script>
+  $(function () {
+    var path = window.location.pathname;
+    $('.header .header__link').each(function (i, e) {
+      if ($(e).attr('href') == path) {
+        $(e).addClass('active');
+      }
+    });
+
+    AOS.init();
+
+    if (window.articles) {
+      $('#articles').on('click', '.articles__posts', function () {
+        window.location.href = '/article/' + $(this).data('type') + '/' + $(this).data('id');
+      })
+    }
+  })
+</script>
+</html>

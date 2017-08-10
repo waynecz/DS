@@ -1,0 +1,36 @@
+<section class="articles" id="articles">
+  <div class="articles__section">
+    <div class="articles__title t1">
+    </div>
+
+    <div class="articles__posts-box">
+      {{each articles.p1}}
+      <div class="articles__posts" data-type="1" data-id="{{$value.id}}">
+        <h5 class="articles__posts-title">
+          {{$value.title}}
+        </h5>
+        <p class="articles__posts-date">{{$value.date}}</p>
+        <p class="articles__posts-summary">{{$value.summary}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="articles__section">
+    <div class="articles__title t2"></div>
+
+    <div class="articles__posts-box">
+      {{each articles.p2}}
+      <div class="articles__posts" data-type="2" data-id="{{$value.id}}">
+        <h5 class="articles__posts-title">
+          {{$value.title}}
+        </h5>
+        <p class="articles__posts-date">{{$value.date}}</p>
+        <p class="articles__posts-summary">{{$value.summary}}</p>
+      </div>
+      {{/each}}
+    </div>
+    </div>
+  </div>
+</section>
+{{include '../control/footer'}}
